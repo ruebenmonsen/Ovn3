@@ -10,8 +10,8 @@ namespace EncapsulationInheritancePolymorphism
     {
         public Person(string firstName, string lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
         private int age;
 

@@ -20,15 +20,10 @@ namespace EncapsulationInheritancePolymorphism
                 sven = personHandler.CreatePerson("Sven", "Andersson", age: 25, height: 180, weight: 80);
                 olof = personHandler.CreatePerson("Olof", "Karlsson", age: 60, height: 172, weight: 67);
                 lisa = personHandler.CreatePerson("Lisa", "Larsson", age: 47, height: 170, weight: 64);
-
             }
-            catch (ArgumentNullException e1)
+            catch (ArgumentException e)
             {
-                throw new ArgumentNullException(e1.Message);
-            }
-            catch(ArgumentOutOfRangeException e2)
-            {
-                throw new ArgumentOutOfRangeException(e2.Message);
+                throw new ArgumentException(e.Message);
             }
 
             // Testar metoder
