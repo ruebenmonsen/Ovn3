@@ -86,12 +86,22 @@ namespace EncapsulationInheritancePolymorphism
                 IsPackLeader = false
             };
 
+            var whiteQueen = new Swan
+            {
+                Name = "White Queen",
+                Weight = 8,
+                Age = 14,
+                WingSpan = 3,
+                HasLifetimePartner = true
+            };
+
 
             // Lägger djur i listan
             animals.Add(bolt);
             animals.Add(wolfy);
             animals.Add(lillaGubben);
             animals.Add(peter);
+            animals.Add(whiteQueen);
 
 
             foreach (var animal in animals)

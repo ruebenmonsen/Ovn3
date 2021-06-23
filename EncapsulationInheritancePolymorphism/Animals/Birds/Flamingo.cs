@@ -15,6 +15,9 @@ namespace EncapsulationInheritancePolymorphism
             get { return uniqueFlamingoProperty; }
             set { uniqueFlamingoProperty = value; }
         }
-
+        internal override string Stats()
+        {
+            return base.Stats();
+        }
     }
 }

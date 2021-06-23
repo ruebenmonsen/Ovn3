@@ -15,6 +15,5 @@ namespace EncapsulationInheritancePolymorphism
             get { return uniquePelicanProperty; }
             set { uniquePelicanProperty = value; }
         }
-
     }
 }
