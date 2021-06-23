@@ -14,32 +14,33 @@ namespace EncapsulationInheritancePolymorphism
             Person sven;
             Person olof;
             Person lisa;
-            
+            List<Person> persons = new();
+
             try
             {
                 sven = personHandler.CreatePerson("Sven", "Andersson", age: 25, height: 180, weight: 80);
                 olof = personHandler.CreatePerson("Olof", "Karlsson", age: 60, height: 172, weight: 67);
                 lisa = personHandler.CreatePerson("Lisa", "Larsson", age: 47, height: 170, weight: 64);
+
+                // Testar metoder
+
+                // Sven och Lisa gifter sig
+                personHandler.SetLastName(sven, "Larsson");
+
+                persons = new List<Person> { sven, olof, lisa };
+
+                // Ett år passerar
+                foreach (var person in persons)
+                {
+                    var age = personHandler.GetAge(person);
+                    age++;
+                    personHandler.SetAge(person, age);
+                    // person.Age++
+                }
             }
             catch (ArgumentException e)
             {
                 throw new ArgumentException(e.Message);
-            }
-
-            // Testar metoder
-
-            // Sven och Lisa gifter sig
-            personHandler.SetLastName(sven, "Larsson");
-
-            List<Person> persons = new List<Person> { sven, olof, lisa };
-            
-            // Ett år passerar
-            foreach (var person in persons)
-            {
-                var age = personHandler.GetAge(person);
-                age++;
-                personHandler.SetAge(person, age);
-                // person.Age++
             }
 
 
@@ -125,8 +126,13 @@ namespace EncapsulationInheritancePolymorphism
             //List<Dog> dogs = new();
             List<Object> dogs = new();
             dogs.Add(lillaGubben);
-            dogs.Add(sven);
-            dogs.Add(olof);
+            
+            foreach (var person in persons)
+            {
+                if (person != null)
+                    dogs.Add(person);
+            }
+
             //9 F: Försök att lägga till en häst i listan av hundar. Varför fungerar inte det?
             // Det är fel typ
 
